@@ -51,16 +51,18 @@ namespace CashRegister
             this.drinkBox = new System.Windows.Forms.TextBox();
             this.warningLabel = new System.Windows.Forms.Label();
             this.changeAmount = new System.Windows.Forms.Label();
+            this.resetButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // title
             // 
+            this.title.BackColor = System.Drawing.Color.DarkRed;
             this.title.Font = new System.Drawing.Font("ISOCTEUR", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.Location = new System.Drawing.Point(12, 9);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(540, 74);
+            this.title.Size = new System.Drawing.Size(540, 39);
             this.title.TabIndex = 0;
-            this.title.Text = "Burger Shop";
+            this.title.Text = "The Burger Shop";
             // 
             // burgerNumber
             // 
@@ -95,6 +97,7 @@ namespace CashRegister
             this.burgerBox.Name = "burgerBox";
             this.burgerBox.Size = new System.Drawing.Size(28, 20);
             this.burgerBox.TabIndex = 4;
+            this.burgerBox.Text = "0";
             // 
             // totalButton
             // 
@@ -136,7 +139,7 @@ namespace CashRegister
             // 
             // subTotalAmount
             // 
-            this.subTotalAmount.BackColor = System.Drawing.SystemColors.Control;
+            this.subTotalAmount.BackColor = System.Drawing.Color.Transparent;
             this.subTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subTotalAmount.Location = new System.Drawing.Point(182, 277);
             this.subTotalAmount.Name = "subTotalAmount";
@@ -174,6 +177,7 @@ namespace CashRegister
             this.tenderedAmount.Name = "tenderedAmount";
             this.tenderedAmount.Size = new System.Drawing.Size(28, 20);
             this.tenderedAmount.TabIndex = 15;
+            this.tenderedAmount.Text = "0";
             // 
             // changeButton
             // 
@@ -197,12 +201,11 @@ namespace CashRegister
             // 
             // outputLabel
             // 
-            this.outputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputLabel.Location = new System.Drawing.Point(238, 83);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(314, 522);
+            this.outputLabel.Size = new System.Drawing.Size(314, 453);
             this.outputLabel.TabIndex = 19;
-            this.outputLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // reciptButton
             // 
@@ -221,6 +224,7 @@ namespace CashRegister
             this.fryBox.Name = "fryBox";
             this.fryBox.Size = new System.Drawing.Size(28, 20);
             this.fryBox.TabIndex = 21;
+            this.fryBox.Text = "0";
             // 
             // drinkBox
             // 
@@ -228,6 +232,7 @@ namespace CashRegister
             this.drinkBox.Name = "drinkBox";
             this.drinkBox.Size = new System.Drawing.Size(28, 20);
             this.drinkBox.TabIndex = 22;
+            this.drinkBox.Text = "0";
             // 
             // warningLabel
             // 
@@ -246,11 +251,24 @@ namespace CashRegister
             this.changeAmount.Size = new System.Drawing.Size(63, 24);
             this.changeAmount.TabIndex = 24;
             // 
+            // resetButton
+            // 
+            this.resetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetButton.Location = new System.Drawing.Point(242, 567);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(310, 38);
+            this.resetButton.TabIndex = 25;
+            this.resetButton.Text = "New Order ";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
             // cashRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(564, 629);
+            this.Controls.Add(this.resetButton);
             this.Controls.Add(this.changeAmount);
             this.Controls.Add(this.warningLabel);
             this.Controls.Add(this.drinkBox);
@@ -304,6 +322,7 @@ namespace CashRegister
         private System.Windows.Forms.TextBox drinkBox;
         private System.Windows.Forms.Label warningLabel;
         private System.Windows.Forms.Label changeAmount;
+        private System.Windows.Forms.Button resetButton;
     }
 }
 

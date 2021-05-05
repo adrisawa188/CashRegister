@@ -95,9 +95,43 @@ namespace CashRegister
 
         private void reciptButton_Click(object sender, EventArgs e)
         {
-            outputLabel.Text = $"The Burger Shop"; 
+            //display recipt title
+            outputLabel.Visible =  true; 
+            outputLabel.Text = $"The Burger Shop";
 
+            //display rest of recipt 
+            outputLabel.Text += $"\n\nHamburger x {burgerCount}       @    {burgerPrice.ToString("c")}";
+            outputLabel.Text += $"\nFries x {fryCount}                  @    {fryPrice.ToString("c")} ";              
+            outputLabel.Text += $"\nDrinks x {drinkCount}                @    {drinkPrice.ToString("c")}";
 
+            outputLabel.Text += $"\n\nSubtotal                          {subTotalOwed.ToString("c")}";
+            outputLabel.Text += $"\nTax                                   {taxAmountOwed.ToString("c")}";
+            outputLabel.Text += $"\nTotal                                {totalOwed.ToString("c")}";
+
+            outputLabel.Text += $"\n\nTendered                        {amountTendered.ToString("c")} ";
+            outputLabel.Text += $"\nChange                           {changeOwed.ToString("c")}";
+
+            outputLabel.Text += $"\n\nHave a nice day!";
+        }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            //set values to zero and disable buttons 
+            burgerBox.Text = Convert.ToString(0);
+            fryBox.Text = Convert.ToString(0);
+            drinkBox.Text = Convert.ToString(0);
+            tenderedAmount.Text = Convert.ToString(0);
+
+            subTotalOwed = 0;
+            taxAmountOwed = 0;
+            totalOwed = 0;
+            amountTendered = 0;
+            changeOwed = 0; 
+            
+            changeButton.Enabled = false;
+            reciptButton.Enabled = false;
+
+            outputLabel.Visible = false;
         }
     }
 }
