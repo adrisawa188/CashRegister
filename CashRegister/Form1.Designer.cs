@@ -29,6 +29,7 @@ namespace CashRegister
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cashRegister));
             this.title = new System.Windows.Forms.Label();
             this.burgerNumber = new System.Windows.Forms.Label();
             this.fryNumber = new System.Windows.Forms.Label();
@@ -291,6 +292,7 @@ namespace CashRegister
             this.Controls.Add(this.fryNumber);
             this.Controls.Add(this.burgerNumber);
             this.Controls.Add(this.title);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "cashRegister";
             this.Text = "Cash Register ";
             this.ResumeLayout(false);
