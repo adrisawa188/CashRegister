@@ -35,6 +35,7 @@ namespace CashRegister
             InitializeComponent();
             changeButton.Enabled = false;
             reciptButton.Enabled = false;
+            tenderedAmount.Enabled = false; 
         }
 
         private void totalButton_Click(object sender, EventArgs e)
@@ -42,6 +43,7 @@ namespace CashRegister
             //check if a number has been entered 
             try
             {
+                tenderedAmount.Enabled = true;
                 burgerCount = Convert.ToDouble(burgerBox.Text);
                 fryCount = Convert.ToDouble(fryBox.Text);
                 drinkCount = Convert.ToDouble(drinkBox.Text);
@@ -102,7 +104,7 @@ namespace CashRegister
             //display rest of recipt 
             outputLabel.Text += $"\n\nHamburger x {burgerCount}       @    {burgerPrice.ToString("c")}";
             outputLabel.Text += $"\nFries x {fryCount}                  @    {fryPrice.ToString("c")} ";              
-            outputLabel.Text += $"\nDrinks x {drinkCount}                @    {drinkPrice.ToString("c")}";
+            outputLabel.Text += $"\nDrinks x {drinkCount}                @   {drinkPrice.ToString("c")}";
 
             outputLabel.Text += $"\n\nSubtotal                          {subTotalOwed.ToString("c")}";
             outputLabel.Text += $"\nTax                                   {taxAmountOwed.ToString("c")}";
@@ -130,8 +132,9 @@ namespace CashRegister
             
             changeButton.Enabled = false;
             reciptButton.Enabled = false;
-
+            tenderedAmount.Enabled = false;
             outputLabel.Visible = false;
+
         }
     }
 }
